@@ -9,8 +9,9 @@ f = open("imuData.csv", "w")
 
 print "Starting to record..."
 offset = time.time()
+timeLimit = 12*60*60  # how many seconds to record for
 # get data and write into file for 10 second
-while (time.time()-offset) < 10:
+while (time.time()-offset) < timeLimit:
     data = ser.read()
     f.write(data)
     f.flush()
