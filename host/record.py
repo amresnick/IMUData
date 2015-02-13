@@ -2,7 +2,7 @@ import serial
 import time
 
 # set up serial port
-ser = serial.Serial(port='/dev/ttyACM0', baudrate=921600, timeout=0)
+ser = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=0)
 
 # create/open an output file
 f = open("imuData.csv", "w")
