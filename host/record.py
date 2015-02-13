@@ -8,9 +8,9 @@ ser = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=0)
 f = open("imuData.csv", "w")
 
 print "Starting to record..."
-
+offset = time.time()
 # get data and write into file for 10 second
-while time.clock() < 10:
+while (time.time()-offset) < 10:
     data = ser.read()
     f.write(data)
     f.flush()
